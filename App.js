@@ -15,33 +15,33 @@ class App extends Component {
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Name</Text>
           </View>
-          <View style={Styles.inputContainer}>
+          <TouchableOpacity style={Styles.inputContainer}>
             <Text style={Styles.inputResult}>Name</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Gender</Text>
           </View>
-          <View style={Styles.inputContainer}>
+          <TouchableOpacity style={Styles.inputContainer}>
             <Text style={Styles.inputResult}>Gender</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Phone</Text>
           </View>
-          <View style={Styles.inputContainer}>
+          <TouchableOpacity style={Styles.inputContainer}>
             <Text style={Styles.inputResult}>Phone</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Address</Text>
           </View>
-          <View style={Styles.inputContainer}>
+          <TouchableOpacity style={Styles.inputContainer}>
             <Text style={Styles.inputResult}>Address</Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={Styles.buttonSubmit}>

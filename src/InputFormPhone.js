@@ -1,8 +1,8 @@
 import React from "react"
 import { View } from "react-native"
 
-const InputForm = () => {
+const InputFormPhone = () => {
   return <View />
 }
 
-export default InputForm
+export default InputFormPhone
