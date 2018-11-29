@@ -43,6 +43,10 @@ class App extends Component {
             <Text style={Styles.inputResult}>Address</Text>
           </View>
         </View>
+
+        <TouchableOpacity style={Styles.buttonSubmit}>
+          <Text style={Styles.textButton}>Submit</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -58,7 +62,17 @@ const Styles = StyleSheet.create({
   textContainer: { width: "30%" },
   text: { fontSize: 20, fontWeight: "bold" },
   inputContainer: { width: "70%", backgroundColor: "#e1f7d5" },
-  inputResult: { fontSize: 20, marginLeft: 5 }
+  inputResult: { fontSize: 20, marginLeft: 5 },
+  buttonSubmit: {
+    backgroundColor: "#d2d2d2",
+    borderRadius: 3,
+    borderWidth: 1,
+    position: "absolute",
+    bottom: 10,
+    right: 10,
+    left: 10
+  },
+  textButton: { textAlign: "center", margin: 10 }
 })
 
 export default App
