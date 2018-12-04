@@ -14,8 +14,37 @@ import Main from "./src/Main"
 import Result from "./src/Result"
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      pageNeedsTobeRendered: 'Main',
+      userName: '',
+    }
+  }
+
+  navigateToInputFormName = () => this.setState({ pageNeedsTobeRendered: 'inputName' })
+
+  navigateToMainPage = () => this.setState({ pageNeedsTobeRendered: 'Main' })
+
+  setUserName = (name) => this.setState({ userName: name })
+
   render() {
-    return <Main />
+    const { pageNeedsTobeRendered, userName } = this.state // Destructuring
+
+    if (pageNeedsTobeRendered === 'inputName') {
+      return <InputFormName 
+        navigateToMainPage={this.navigateToMainPage}
+        setUserName={this.setUserName} />
+    } else if (pageNeedsTobeRendered === 'inputAddress') {
+      return <InputFormAddress /> 
+    }
+    
+    return ( 
+      <Main 
+        userName={userName}
+        navigateToInputFormName={this.navigateToInputFormName} />
+    )
   }
 }
 

@@ -3,14 +3,17 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 
 class Main extends Component {
   render() {
+    const { userName } = this.props
     return (
       <View style={Styles.classContainer}>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Name</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Name</Text>
+          <TouchableOpacity 
+            onPress={ () => this.props.navigateToInputFormName() }
+            style={Styles.inputContainer}>
+            <Text style={Styles.inputResult}> {userName} </Text>
           </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
