@@ -14,36 +14,83 @@ import Main from "./src/Main"
 import Result from "./src/Result"
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
-      pageNeedsTobeRendered: 'Main',
-      userName: '',
+      pageNeedsTobeRendered: "Main",
+      userName: "",
+      userAddress: "",
+      userPhone: "",
+      userGender: ""
     }
   }
 
-  navigateToInputFormName = () => this.setState({ pageNeedsTobeRendered: 'inputName' })
+  navigateToInputFormName = () =>
+    this.setState({ pageNeedsTobeRendered: "inputName" })
+  navigateToInputAddress = () =>
+    this.setState({ pageNeedsTobeRendered: "inputAddress" })
+  navigateToInputPhone = () =>
+    this.setState({ pageNeedsTobeRendered: "inputPhone" })
+  navigateToInputGender = () =>
+    this.setState({ pageNeedsTobeRendered: "inputGender" })
+  navigateToMainPage = () => this.setState({ pageNeedsTobeRendered: "Main" })
 
-  navigateToMainPage = () => this.setState({ pageNeedsTobeRendered: 'Main' })
-
-  setUserName = (name) => this.setState({ userName: name })
+  setUserName = name => this.setState({ userName: name })
+  setUserAddress = address => this.setState({ userAddress: address })
+  setUserPhone = phone => this.setState({ userPhone: phone })
+  setUserGender = gender => this.setState({ userGender: gender })
 
   render() {
-    const { pageNeedsTobeRendered, userName } = this.state // Destructuring
+    const {
+      pageNeedsTobeRendered,
+      userName,
+      userAddress,
+      userGender,
+      userPhone
+    } = this.state // Destructuring
 
-    if (pageNeedsTobeRendered === 'inputName') {
-      return <InputFormName 
-        navigateToMainPage={this.navigateToMainPage}
-        setUserName={this.setUserName} />
-    } else if (pageNeedsTobeRendered === 'inputAddress') {
-      return <InputFormAddress /> 
+    if (pageNeedsTobeRendered === "inputName") {
+      return (
+        <InputFormName
+          navigateToMainPage={this.navigateToMainPage}
+          setUserName={this.setUserName}
+        />
+      )
+    } else if (pageNeedsTobeRendered === "inputAddress") {
+      return (
+        <InputFormAddress
+          navigateToMainPage={this.navigateToMainPage}
+          setUserAddress={this.setUserAddress}
+        />
+      )
+    } else if (pageNeedsTobeRendered === "inputPhone") {
+      return (
+        <InputFormPhone
+          navigateToMainPage={this.navigateToMainPage}
+          setUserPhone={this.setUserPhone}
+        />
+      )
+    } else if (pageNeedsTobeRendered === "inputGender") {
+      return (
+        <InputFormGender
+          navigateToMainPage={this.navigateToMainPage}
+          setUserGender={this.setUserGender}
+        />
+      )
     }
-    
-    return ( 
-      <Main 
+
+    return (
+      <Main
         userName={userName}
-        navigateToInputFormName={this.navigateToInputFormName} />
+        userAddress={userAddress}
+        userGender={userGender}
+        userPhone={userPhone}
+        navigateToInputAddress={this.navigateToInputAddress}
+        navigateToInputGender={this.navigateToInputGender}
+        navigateToInputPhone={this.navigateToInputPhone}
+        navigateToInputFormName={this.navigateToInputFormName}
+      />
     )
   }
 }
