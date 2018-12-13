@@ -35,6 +35,7 @@ class App extends Component {
   navigateToInputGender = () =>
     this.setState({ pageNeedsTobeRendered: "inputGender" })
   navigateToMainPage = () => this.setState({ pageNeedsTobeRendered: "Main" })
+  navigateToResult = () => this.setState({ pageNeedsTobeRendered: "result" })
 
   setUserName = name => this.setState({ userName: name })
   setUserAddress = address => this.setState({ userAddress: address })
@@ -50,6 +51,7 @@ class App extends Component {
       userPhone
     } = this.state // Destructuring
 
+    // Routing
     if (pageNeedsTobeRendered === "inputName") {
       return (
         <InputFormName
@@ -78,6 +80,16 @@ class App extends Component {
           setUserGender={this.setUserGender}
         />
       )
+    } else if (pageNeedsTobeRendered === "result") {
+      return (
+        <Result 
+          navigateToMainPage={this.navigateToMainPage}
+          userName={userName}
+          userPhone={userPhone}
+          userGender={userGender}
+          userAddress={userAddress}
+        />
+      )
     }
 
     return (
@@ -90,6 +102,7 @@ class App extends Component {
         navigateToInputGender={this.navigateToInputGender}
         navigateToInputPhone={this.navigateToInputPhone}
         navigateToInputFormName={this.navigateToInputFormName}
+        navigateToResult={this.navigateToResult}
       />
     )
   }

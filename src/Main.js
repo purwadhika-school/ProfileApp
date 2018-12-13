@@ -11,7 +11,8 @@ class Main extends Component {
       navigateToInputAddress,
       navigateToInputGender,
       navigateToInputPhone,
-      navigateToInputFormName
+      navigateToInputFormName,
+      navigateToResult
     } = this.props
 
     return (
@@ -61,7 +62,9 @@ class Main extends Component {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={Styles.buttonSubmit}>
+        <TouchableOpacity 
+          onPress={() => navigateToResult()}
+          style={Styles.buttonSubmit}>
           <Text style={Styles.textButton}>Submit</Text>
         </TouchableOpacity>
       </View>
